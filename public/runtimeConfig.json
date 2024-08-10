@@ -1,0 +1,28 @@
+{
+  "SocketURL": "wss://t5r0xjryuc.execute-api.ap-south-1.amazonaws.com/prod",
+  "IsInternalUser": "true",
+  "ModelProviderName": "Bedrock",
+  "UserPoolClientId": "668qjbjlqtan4ugcjn4hs7tt08",
+  "ApiEndpoint": "wss://t5r0xjryuc.execute-api.ap-south-1.amazonaws.com",
+  "UserPoolId": "ap-south-1_qYAh4crvz",
+  "AwsRegion": "ap-south-1",
+  "UseCaseConfig": {
+    "UseCaseName": "upgrad-clone",
+    "ConversationMemoryType": "DynamoDB",
+    "KnowledgeBaseType": "Kendra",
+    "KnowledgeBaseParams": { "NumberOfDocs": 2, "ReturnSourceDocs": true },
+    "LlmParams": {
+      "ModelProvider": "Bedrock",
+      "ModelId": "mistral.mixtral-8x7b-instruct-v0:1",
+      "stop": {
+        "Value": "[\"\\n\\nH\", \"\\n\\nAI\" , \"AI:\", \"However\", \"User:\", \"Note:\", \"Confidence:\"]",
+        "Type": "list"
+      },
+      "PromptTemplate": "[INST] References:\n{context}\n\nCarefully read the reference passages above and try to truthfully answer the Human's question. If the answer is not explicitly contained within the references, respond with \"Sorry I don't know\". It is very important that you respond \"Sorry I don't know\" if the answer is not found within the references above. Do not make use of any information outside of the references. Try to be brief and write a response in no more than 5 complete sentences.\n\nCurrent conversation:\n{history}\n\nHuman: {input}\nAI: [/INST]",
+      "Streaming": true,
+      "Verbose": true,
+      "Temperature": 0,
+      "RAGEnabled": true
+    }
+  }
+}
