@@ -8,7 +8,7 @@ import {
   useState,
   
 } from "react";
-import gemLogo from "../../assets/GeM_Logo.png";
+import RAGLOGO from "../../assets/RAG_Logo.png";
 import AWS from "aws-sdk";
 import {
   CognitoUserPool,
@@ -68,7 +68,7 @@ export const Chat = memo(({ stopConversationRef, socketUrl }: Props) => {
   }, [selectedConversation]);
 
   // Set up AWS configuration
-  AWS.config.update({ region: "ap-soputh-1" });
+  AWS.config.update({ region: "ap-south-1" });
 
   // Define AWS Cognito credentials
   const poolData = {
@@ -411,9 +411,9 @@ export const Chat = memo(({ stopConversationRef, socketUrl }: Props) => {
           className="AskAI-chatBox bg-white "
           style={showChatButton ? mountedStyle : unmountedStyle}
         >
-          <div className="bg-gradient-to-r from-[#444BD3] via-purple-500 to-orange-300 h-[45px] rounded-[10px] flex items-center px-5 py-2">
+          <div className="bg-gradient-to-r from-[#232F3E] via-[#37475A] to-[#FF9900] h-[45px] rounded-[10px] flex items-center px-5 py-2">
             <div className="cursor-pointer">
-              <img src={gemLogo} alt="User" width={30} height={30} />
+              <img src={RAGLOGO} alt="User" width={30} height={30} />
             </div>
             <div className=" ml-2 mr-auto">
               <h3 className="text-md font-semibold text-white">AskAI</h3>
@@ -437,7 +437,8 @@ export const Chat = memo(({ stopConversationRef, socketUrl }: Props) => {
                 height="25"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
-                stroke="#ffffff"
+                // stroke="#ffffff"
+                stroke="#FF9900"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -500,20 +501,22 @@ export const Chat = memo(({ stopConversationRef, socketUrl }: Props) => {
         <button
           id="chatbotStart"
           type="button"
-          className="text-white bg-[#444BD3]  focus:outline-none font-medium text-sm  text-center rounded-t-2xl rounded-bl-2xl py-1.5 px-2.5 absolute right-8 bottom-3 transition-all flex items-center"
+          // className="text-white bg-[#444BD3]  focus:outline-none font-medium text-sm  text-center rounded-t-2xl rounded-bl-2xl py-1.5 px-2.5 absolute right-8 bottom-3 transition-all flex items-center"
+          className="text-white bg-[#232F3E] focus:outline-none font-medium text-sm text-center rounded-t-2xl rounded-bl-2xl py-1.5 px-2.5 absolute right-8 bottom-3 transition-all flex items-center"
           onClick={() => {
             setShowChatButton(true);
             connectWebSocket();
           }}
         >
-          <img src={gemLogo} alt="User" width={25} height={25} />
+          <img src={RAGLOGO} alt="User" width={25} height={25} />
           <span className="ml-1">AskAI</span>
         </button>
       ) : (
         <button
           id="chatbotClose"
           type="button"
-          className="text-white bg-[#444BD3]  focus:outline-none font-medium text-sm  text-center rounded-3xl p-2 absolute right-8 bottom-3 transition-all"
+          // className="text-white bg-[#444BD3]  focus:outline-none font-medium text-sm  text-center rounded-3xl p-2 absolute right-8 bottom-3 transition-all"
+          className="text-white bg-[#232F3E] focus:outline-none font-medium text-sm text-center rounded-3xl p-2 absolute right-8 bottom-3 transition-all"
           onClick={() => {
             setShowChatButton(false);
             resetChatbot();

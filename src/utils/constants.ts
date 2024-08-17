@@ -13,10 +13,10 @@ export const SOURCE_DOCS_RESPONSE_PAYLOAD_KEY = "sourceDocument";
 
 
 export const SOCKETURL =
-  "wss://t5r0xjryuc.execute-api.ap-south-1.amazonaws.com";
+  "wss://qb6myl6gwd.execute-api.ap-south-1.amazonaws.com/prod";
 
 export const USERPOOLID = "ap-south-1_qYAh4crvz";
-export const CLIENTID = "668qjbjlqtan4ugcjn4hs7tt08";
+export const CLIENTID = "5311cr9p6sld3d96u54tuv4qim";
 
 export const USERNAME = "tiwarysa-admin";
 export const PASSWORD = "Julsanjay@0721";
